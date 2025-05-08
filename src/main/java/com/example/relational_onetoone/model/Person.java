@@ -13,7 +13,7 @@ public class Person {
 
     //Owner of relation
     //BiDirectional
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
     @JoinColumn(name = "passport_id", unique = true, nullable = false)
     private Passport passport;
 

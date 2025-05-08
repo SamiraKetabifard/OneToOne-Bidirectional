@@ -14,7 +14,7 @@ public class Passport {
     private String passportNumber;
 
     // BiDirectional
-    @OneToOne(mappedBy = "passport", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "passport")
     @JsonIgnore
     private Person person;
 
