@@ -2,6 +2,7 @@ package com.example.relational_onetoone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Passport {
@@ -10,6 +11,7 @@ public class Passport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Passport number is required")
     @Column(unique = true, nullable = false)
     private String passportNumber;
 
@@ -27,7 +29,9 @@ public class Passport {
     public Long getId() {
         return id;
     }
-
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getPassportNumber() {
         return passportNumber;
     }
